@@ -44,22 +44,26 @@ public class GroupSearcher {
     }
 
     private static void compute(Map<Integer, List<Member>> membersOfBands){
-        boolean firstIteration = true;
-        for(int groupID : membersOfBands.keySet()){
-            if(groupID != Exercise4Application.DESIRED_ID &&
-                    membersOfBands.get(groupID).size() > 1){
-                if(!firstIteration)
-                    System.out.print(", ");
-                else
-                    firstIteration = false;
-                System.out.print(groupIds.get(groupID) + " (" + groupID + ")");
-                for(Member member : membersOfBands.get(groupID))
-                    System.out.print(
-                            " " + member.getName() +
-                            " (" + member.getId() + ")");
+        final boolean[] firstIteration = {true};
+        membersOfBands
+                .keySet()
+                .stream()
+                .filter(groupID ->
+                        (groupID != Exercise4Application.DESIRED_ID) &&
+                                (membersOfBands.get(groupID).size() > 1)
+                )
+                .forEach(groupID -> {
+                    if(!firstIteration[0])
+                        System.out.print(", ");
+                    else
+                        firstIteration[0] = false;
+                    System.out.print(groupIds.get(groupID) + " (" + groupID + ")");
+                    membersOfBands.get(groupID)
+                            .forEach(member -> System.out.print(
+                                    " " + member.getName() +
+                                            " (" + member.getId() + ")"));
+                });
 
-            }
-        }
     }
 
 }
