@@ -50,7 +50,7 @@ public class GroupSearcher {
                 .stream()
                 .filter(groupID ->
                         (groupID != Exercise4Application.DESIRED_ID) &&
-                                (membersOfBands.get(groupID).size() > 1)
+                        (membersOfBands.get(groupID).size() > 1)
                 )
                 .forEach(groupID -> {
                     if(!firstIteration[0])
@@ -61,7 +61,7 @@ public class GroupSearcher {
                     membersOfBands.get(groupID)
                             .forEach(member -> System.out.print(
                                     " " + member.getName() +
-                                            " (" + member.getId() + ")"));
+                                    " (" + member.getId() + ")"));
                 });
 
     }
