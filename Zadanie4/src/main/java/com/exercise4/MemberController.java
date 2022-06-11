@@ -1,4 +1,4 @@
-package com.exercise3;
+package com.exercise4;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;

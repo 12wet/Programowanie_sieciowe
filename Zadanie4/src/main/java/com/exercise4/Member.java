@@ -1,15 +1,15 @@
-package com.exercise3;
+package com.exercise4;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DTOMember {
+public class Member {
 
     private String name;
     private int id;
-    private List<String> groups;
+    private List<Group> groups;
 
     public String getName() {
         return name;
@@ -27,11 +27,11 @@ public class DTOMember {
         this.id = id;
     }
 
-    public List<String> getGroups() {
+    public List<Group> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<String> groups) {
+    public void setGroups(List<Group> groups) {
         this.groups = groups;
     }
 

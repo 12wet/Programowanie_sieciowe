@@ -1,4 +1,4 @@
-package com.exercise3;
+package com.exercise4;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class Exercise3Application {
+public class Exercise4Application {
 	/*======================================================================*/
 	// CHANGE THE VARIABLE TO DISCOGS ARTIST ID
 	// OF YOUR CHOICE
@@ -16,7 +16,7 @@ public class Exercise3Application {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(Exercise3Application.class, args);
+		SpringApplication.run(Exercise4Application.class, args);
 	}
 
 	@Bean

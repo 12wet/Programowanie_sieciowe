@@ -1,4 +1,4 @@
-package com.exercise3;
+package com.exercise4;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

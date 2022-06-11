@@ -1,4 +1,4 @@
-package com.exercise3;
+package com.exercise4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +46,7 @@ public class GroupSearcher {
     private static void compute(Map<Integer, List<Member>> membersOfBands){
         boolean firstIteration = true;
         for(int groupID : membersOfBands.keySet()){
-            if(groupID != Exercise3Application.DESIRED_ID &&
+            if(groupID != Exercise4Application.DESIRED_ID &&
                     membersOfBands.get(groupID).size() > 1){
                 if(!firstIteration)
                     System.out.print(", ");
