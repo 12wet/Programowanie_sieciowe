@@ -24,7 +24,7 @@ public class SiteScrapper{
             SiteChecker sc = new SiteChecker();
 
             if(sc.checkSite() == 0){
-                return Jsoup.parse(sc.getHTML());
+                return Jsoup.parse(sc.getSiteContent());
             }
             return null;
 

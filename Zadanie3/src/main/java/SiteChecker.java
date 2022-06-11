@@ -11,7 +11,7 @@ public class SiteChecker{
     private final HttpURLConnection httpCon;
     private final BufferedReader in;
 
-    private String html;
+    private String siteContent;
 
     SiteChecker() throws IOException{
         site = new URL("https://klient.internetowykantor.pl/api/public/marketBrief");
@@ -23,8 +23,8 @@ public class SiteChecker{
 
     public int checkSite(){
         try {
-            html = getHtmlBody();
-            if(!isHTMLorJSON() || !isCodeCorrect())
+            siteContent = retrieveSiteContent();
+            if(!isJsonType() || !isCodeCorrect())
                 return 1;
             if(containsPattern())
                 return 0;
@@ -34,12 +34,12 @@ public class SiteChecker{
         }
     }
 
-    private String getHtmlBody() throws IOException {
+    private String retrieveSiteContent() throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
         try {
-            String str;
-            while ((str = in.readLine()) != null) {
-                contentBuilder.append(str);
+            String line;
+            while ((line = in.readLine()) != null) {
+                contentBuilder.append(line);
             }
             in.close();
         } catch (IOException ignored) {
@@ -50,10 +50,10 @@ public class SiteChecker{
     private boolean containsPattern()
             throws IOException{
 
-        return html.contains(SiteChecker.SITE_PATTERN);
+        return siteContent.contains(SiteChecker.SITE_PATTERN);
     }
 
-    private boolean isHTMLorJSON(){
+    private boolean isJsonType(){
         return httpCon.getContentType().equals("application/json; charset=utf-8");
     }
 
@@ -65,8 +65,8 @@ public class SiteChecker{
         Runtime.getRuntime().addShutdownHook(new Thread(this::stopConnection));
     }
 
-    public String getHTML(){
-        return html;
+    public String getSiteContent(){
+        return siteContent;
     }
 
     private void stopConnection(){
