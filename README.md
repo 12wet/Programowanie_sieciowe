@@ -8,6 +8,6 @@ Zadanie 3 - Java
 
 Zadanie 4 - Java + Spring
 
-Zadania realizowane w ramach przedmiotu algorytmy i struktury danych II.
+Zadania realizowane w ramach przedmiotu programowanie sieciowe.
 
 Źródło zadań: https://users.uj.edu.pl/~palacz/edu/202122-PS/index.html
