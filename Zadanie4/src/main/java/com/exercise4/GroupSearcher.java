@@ -44,7 +44,6 @@ public class GroupSearcher {
     }
 
     private static void compute(Map<Integer, List<Member>> membersOfBands){
-        final boolean[] firstIteration = {true};
         membersOfBands
                 .keySet()
                 .stream()
@@ -53,11 +52,8 @@ public class GroupSearcher {
                         (membersOfBands.get(groupID).size() > 1)
                 )
                 .forEach(groupID -> {
-                    if(!firstIteration[0])
-                        System.out.print(", ");
-                    else
-                        firstIteration[0] = false;
-                    System.out.print(groupIds.get(groupID) + " (" + groupID + ")");
+                    System.out.print('\n' + groupIds.get(groupID) +
+                                     " (" + groupID + ")");
                     membersOfBands.get(groupID)
                             .forEach(member -> System.out.print(
                                     " " + member.getName() +
