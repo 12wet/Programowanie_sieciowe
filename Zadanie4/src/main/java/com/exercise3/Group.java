@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Band {
+public class Group {
 
     private String name;
     private int id;
@@ -37,7 +37,7 @@ public class Band {
 
     @Override
     public String toString() {
-        return "Band{" +
+        return "Group{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", members=" + members +

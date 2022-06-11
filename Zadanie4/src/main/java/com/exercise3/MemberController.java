@@ -16,7 +16,7 @@ public class MemberController {
     public static Member retrieveMember(DTOMember dtoMember){
         try {
             return restTemplate().getForObject(
-                    BandSearcher.getApiUrl() + dtoMember.getId(), Member.class);
+                    GroupSearcher.getApiUrl() + dtoMember.getId(), Member.class);
         } catch (HttpClientErrorException e){
             return retryRetrieveMember(dtoMember, e);
         }
@@ -27,7 +27,7 @@ public class MemberController {
             try {
                 sleep(60000);
                 return restTemplate().getForObject(
-                        BandSearcher.getApiUrl() + dtoMember.getId(), Member.class);
+                        GroupSearcher.getApiUrl() + dtoMember.getId(), Member.class);
             }
             catch (HttpClientErrorException e2) { e = e2;}
         }

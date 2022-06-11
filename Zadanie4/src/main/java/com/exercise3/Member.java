@@ -9,7 +9,7 @@ public class Member {
 
     private String name;
     private int id;
-    private List<Band> groups;
+    private List<Group> groups;
 
     public String getName() {
         return name;
@@ -27,11 +27,11 @@ public class Member {
         this.id = id;
     }
 
-    public List<Band> getGroups() {
+    public List<Group> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<Band> groups) {
+    public void setGroups(List<Group> groups) {
         this.groups = groups;
     }
 

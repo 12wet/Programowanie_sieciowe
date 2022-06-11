@@ -21,9 +21,7 @@ public class Exercise3Application {
 
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) {
-		return args -> {
-			BandSearcher.search(restTemplate.getForObject(
-					BandSearcher.getApiUrl() + DESIRED_ID, Band.class));
-		};
+		return args -> GroupSearcher.search(restTemplate.getForObject(
+				GroupSearcher.getApiUrl() + DESIRED_ID, Group.class));
 	}
 }
