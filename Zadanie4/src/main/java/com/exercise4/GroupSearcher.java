@@ -33,12 +33,12 @@ public class GroupSearcher {
     private static Map<Integer, List<Member>> membersOfBands(List<Member> members){
         Map<Integer, List<Member>> output = new HashMap<>();
         members.forEach(member -> {
-                    for(Group group : member.getGroups())
-                        if(output.putIfAbsent(group.getId(),
+                    for(Group group : member.getGroups()) {
+                        if (output.putIfAbsent(group.getId(),
                                 new ArrayList<>(List.of(member))) != null) {
                             output.get(group.getId()).add(member);
-                        }
-                    else groupIds.put(group.getId(), group.getName());
+                        } else groupIds.put(group.getId(), group.getName());
+                    }
                 });
         return output;
     }
