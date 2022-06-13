@@ -1,11 +1,11 @@
 package com.exercise4;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
-@RestController
+@Configuration
 public class MemberController {
 
     @Bean
